@@ -1,10 +1,23 @@
-- 👋 Hi, I’m @DKhang1902
-- 👀 I’m interested in ...
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
+#include <Servo.h>
 
-<!---
-DKhang1902/DKhang1902 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+Servo myservo;  // create servo object to control a servo
+
+int pos = 0;
+void setup() {
+  myservo.attach(9);  // attaches the servo on pin 9 to the servo object
+  myservo.write(pos);
+  delay(100);
+}
+
+void loop() {
+for (pos = 0; pos< 180;pos+=5){
+  myservo.write(pos);
+  delay(20);
+}
+delay(50);
+  for (pos = 180; pos>0;pos-=5){
+  myservo.write(pos);
+  delay(20);
+  }
+  delay(50);
+}
